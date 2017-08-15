@@ -1,0 +1,12 @@
+.container {
+	padding: 5%;
+}
+.note-list {
+	border-right: 1px grey solid;
+}
+.note-item {
+	border-bottom: 1px grey solid;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	list-style: none;
+}
