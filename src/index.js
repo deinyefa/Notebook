@@ -1,20 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-// Components
-import NoteList from './component/note-list';
+import App from './components/app';
+import reducers from './reducers';
 
-const App = () => {
-	return (
-		<div className="note-list col-md-6">
-			<ul className="">
-				<li className="note-item">Note 1</li>
-				<li className="note-item">Note 2</li>
-				<li className="note-item">Note 3</li>
-				<li className="note-item">Note 4</li>
-			</ul>
-		</div>
-	);
-};
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(
+	<Provider store={createStoreWithMiddleware(reducers)}>
+		<App />
+	</Provider>,
+	document.querySelector('.container')
+);
