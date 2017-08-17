@@ -1,24 +1,35 @@
 body {
 	height: 100%;
+	background-color: #ecbbaa !important;
 }
 .container {
 	padding: 5%;
 }
-.note-list ul {
-	padding-left: 0;
+
+/* ---------------------- HEADER --------------------- */
+.header {
+	margin: auto;
 }
+
+/* --------------------- NOTEAREA -------------------- */
 .note-area {
 	border-left: 1px #bfbfbf solid;
 	height: -webkit-fill-available;
+}
+textarea {
+	border: none;
+	background-color: #ecbbaa;
+}
+
+/* --------------------- NOTELIST -------------------- */
+.note-list ul {
+	padding-left: 0;
 }
 .note-item {
 	border-bottom: 1px #bfbfbf solid;
 	padding-bottom: 5%;
 	padding-top: 5%;
 	list-style: none;
-}
-textarea {
-	border: none;
 }
 .note-item:hover {
 	cursor: pointer;
