@@ -1,12 +1,25 @@
+body {
+	height: 100%;
+}
 .container {
 	padding: 5%;
 }
-.note-list {
-	border-right: 1px grey solid;
+.note-list ul {
+	padding-left: 0;
+}
+.note-area {
+	border-left: 1px #bfbfbf solid;
+	height: -webkit-fill-available;
 }
 .note-item {
-	border-bottom: 1px grey solid;
+	border-bottom: 1px #bfbfbf solid;
 	padding-bottom: 5%;
 	padding-top: 5%;
 	list-style: none;
+}
+textarea {
+	border: none;
+}
+.note-item:hover {
+	cursor: pointer;
 }
