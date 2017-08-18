@@ -32,7 +32,7 @@ class NoteList extends Component {
 function mapStateToProps(state) {
 	// what is returned will show up as props inside BookList
 	return {
-		notes: state.notes
+		notes: state.notes.notelist
 	};
 }
 

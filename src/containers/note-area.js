@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { updateContent } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class NoteArea extends Component {
 	render() {
 		return (
 			<div className="note-area col-sm-6">
-				<textarea placeholder="Start writing..." rows="10" cols="50" />
+				<textarea
+					placeholder="Start writing..."
+					rows="10"
+					cols="50"
+					value={this.props.note.title}
+					onChange={e => this.props.content(e.target.value)}
+				/>
 			</div>
 		);
 	}
@@ -13,8 +21,12 @@ class NoteArea extends Component {
 
 function mapStateToProps(state) {
 	return {
-		note: state.activeNote
+		note: state.notes.selected
 	};
 }
 
-export default connect(mapStateToProps)(NoteArea);
+function mapDispachToProps(dispatch) {
+	return bindActionCreators({ content: updateContent }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispachToProps)(NoteArea);

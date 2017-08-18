@@ -11,6 +11,7 @@ export default class App extends Component {
 		return (
 			<div>
 				<Header />
+				<hr />
 				<NoteList />
 				<NoteArea />
 			</div>
