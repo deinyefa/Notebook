@@ -13,9 +13,14 @@ export function updateContent(content) {
 	};
 }
 
-export function newNote(note) {
+export function newNote() {
 	return {
-		type: 'NEW_NOTE',
-		payload: note
+		type: 'NEW_NOTE'
+	};
+}
+
+export function removeNote() {
+	return {
+		type: 'REMOVE_NOTE'
 	};
 }

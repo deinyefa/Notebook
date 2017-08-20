@@ -30,6 +30,16 @@ export default function(
 				...state,
 				notelist: [...state.notelist, { title: '', id: nextID }]
 			};
+
+		case 'REMOVE_NOTE':
+			state.notelist.splice(
+				state.notelist.findIndex(() => state.selected.id),
+				1
+			);
+			return {
+				...state,
+				notelist: [...state.notelist]
+			};
 	}
 	return state;
 }
