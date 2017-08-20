@@ -2,7 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 
 // Components
-import Header from './header.js';
+import Header from '../containers/header';
 import NoteList from '../containers/note-list';
 import NoteArea from '../containers/note-area';
 

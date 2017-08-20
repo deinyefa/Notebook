@@ -20,7 +20,7 @@ class NoteList extends Component {
 
 	render() {
 		return (
-			<div className="note-list col-sm-6">
+			<div className="note-list col-sm-4">
 				<ul>
 					{this.renderList()}
 				</ul>

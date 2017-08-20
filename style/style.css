@@ -1,6 +1,6 @@
 body {
 	height: 100%;
-	background-color: #ecbbaa !important;
+	background-color: #d7d7d7 !important;
 }
 .container {
 	padding: 5%;
@@ -18,7 +18,7 @@ body {
 }
 textarea {
 	border: none;
-	background-color: #ecbbaa;
+	background-color: #d7d7d7;
 }
 
 /* --------------------- NOTELIST -------------------- */
@@ -33,4 +33,5 @@ textarea {
 }
 .note-item:hover {
 	cursor: pointer;
+	background-color: #f0ad4e;
 }

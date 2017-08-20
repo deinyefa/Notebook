@@ -1,4 +1,5 @@
 // state here is not app state, only the state this reducer is responsible for...
+let nextID = 4;
 export default function(
 	state = {
 		selected: {},
@@ -18,10 +19,16 @@ export default function(
 			return {
 				...state,
 				notelist: state.notelist.map(note => {
-					if (note.id == state.selected.id) note.title = state.selected.title;
+					if (note.id == state.selected.id) note.title = action.payload;
 					return note;
 				}),
 				selected: { ...state.selected, title: action.payload }
+			};
+		case 'NEW_NOTE':
+			nextID += 1;
+			return {
+				...state,
+				notelist: [...state.notelist, { title: '', id: nextID }]
 			};
 	}
 	return state;

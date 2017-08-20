@@ -12,3 +12,10 @@ export function updateContent(content) {
 		payload: content
 	};
 }
+
+export function newNote(note) {
+	return {
+		type: 'NEW_NOTE',
+		payload: note
+	};
+}
