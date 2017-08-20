@@ -33,7 +33,7 @@ export default function(
 
 		case 'REMOVE_NOTE':
 			state.notelist.splice(
-				state.notelist.findIndex(() => state.selected.id),
+				state.notelist.findIndex(element => element.id == state.selected.id),
 				1
 			);
 			return {

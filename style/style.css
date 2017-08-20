@@ -2,13 +2,11 @@ body {
 	height: 100%;
 	background-color: #d7d7d7 !important;
 }
-.container {
-	padding: 5%;
-}
 
 /* ---------------------- HEADER --------------------- */
 .header {
 	margin: auto;
+	background-color: #909090;
 }
 
 /* --------------------- NOTEAREA -------------------- */
