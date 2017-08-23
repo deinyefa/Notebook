@@ -1,35 +1,57 @@
+*:focus {
+  outline: 0; }
+
 body {
-	height: 100%;
-	background-color: #d7d7d7 !important;
-}
+  height: 100%;
+  background-color: #d7d7d7 !important; }
 
 /* ---------------------- HEADER --------------------- */
 .header {
-	margin: auto;
-	background-color: #909090;
-}
+  margin: auto;
+  background-color: #909090;
+  padding-top: 5px;
+  padding-bottom: 5px; }
+  .header .heading {
+    display: block; }
+    @media screen and (min-width: 1024px) {
+      .header .heading {
+        display: none; } }
+
+.searchbox {
+  border-radius: 5%;
+  width: 65%; }
+
+.material-icons {
+  outline: none !important;
+  border-radius: 10%;
+  margin: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white; }
+  @media screen and (max-width: 768px) {
+    .material-icons {
+      display: none !important; } }
 
 /* --------------------- NOTEAREA -------------------- */
 .note-area {
-	border-left: 1px #bfbfbf solid;
-	height: -webkit-fill-available;
-}
-textarea {
-	border: none;
-	background-color: #d7d7d7;
-}
+  border-left: 1px #bfbfbf solid; }
+  .note-area textarea {
+    border: none;
+    background-color: #d7d7d7;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available; }
 
 /* --------------------- NOTELIST -------------------- */
 .note-list ul {
-	padding-left: 0;
-}
+  padding-left: 0; }
+
 .note-item {
-	border-bottom: 1px #bfbfbf solid;
-	padding-bottom: 5%;
-	padding-top: 5%;
-	list-style: none;
-}
-.note-item:hover {
-	cursor: pointer;
-	background-color: #f0ad4e;
-}
+  border-bottom: 1px #bfbfbf solid;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  list-style: none; }
+  .note-item:hover {
+    cursor: pointer;
+    background-color: #f0ad4e; }
+
+/*# sourceMappingURL=style.css.map */

@@ -8,7 +8,7 @@ class NoteList extends Component {
 		return this.props.notes.map(note => {
 			return (
 				<li
-					className="note-item"
+					className="note-item pl-3"
 					key={note.id}
 					onClick={() => this.props.selectNote(note)}
 				>
@@ -20,7 +20,7 @@ class NoteList extends Component {
 
 	render() {
 		return (
-			<div className="note-list col-sm-4">
+			<div className="note-list col-sm-4 px-0">
 				<ul>
 					{this.renderList()}
 				</ul>

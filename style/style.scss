@@ -1,0 +1,72 @@
+$color-primary: #d7d7d7;
+$color-secondary: #bfbfbf;
+
+$break-meduim: 768px;
+$break-large: 1024px;
+
+*:focus {
+	outline: 0;
+}
+
+body {
+	height: 100%;
+	background-color: $color-primary !important;
+}
+
+/* ---------------------- HEADER --------------------- */
+.header {
+	margin: auto;
+	background-color: #909090;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	.heading {
+		display: block;
+		@media screen and (min-width: $break-large) {
+			display: none;
+		}
+	}
+}
+.searchbox {
+	border-radius: 5%;
+	width: 65%;
+}
+.material-icons {
+	outline: none !important;
+	border-radius: 10%;
+	margin: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: white;
+
+	@media screen and (max-width: $break-meduim) {
+		display: none !important;
+	}
+}
+
+/* --------------------- NOTEAREA -------------------- */
+.note-area {
+	border-left: 1px $color-secondary solid;
+
+	textarea {
+		border: none;
+		background-color: $color-primary;
+		width: -webkit-fill-available;
+		height: -webkit-fill-available;
+	}
+}
+
+/* --------------------- NOTELIST -------------------- */
+.note-list ul {
+	padding-left: 0;
+}
+.note-item {
+	border-bottom: 1px $color-secondary solid;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	list-style: none;
+
+	&:hover {
+		cursor: pointer;
+		background-color: #f0ad4e;
+	}
+}

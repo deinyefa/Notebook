@@ -8,10 +8,26 @@ class Header extends Component {
 	render() {
 		return (
 			<div className="header row">
-				<h1 className="col-sm-6"> NoteBook </h1>
-				<div className="col-sm-6">
-					<button onClick={this.props.newNote}>New Note</button>
-					<button onClick={this.props.removeNote}>Delete Note</button>
+				<h2 className="col-sm-12 heading text-center">Notebook</h2>
+				<div className="col-md-4">
+					<button className="material-icons">list</button>
+					<button className="material-icons">dashboard</button>
+					<button className="material-icons" onClick={this.props.removeNote}>
+						&#xE872;
+					</button>
+					<button className="material-icons" onClick={this.props.newNote}>
+						add
+					</button>
+				</div>
+				<div className="col-md-3">
+					<button className="material-icons">lock</button>
+					<button className="material-icons">radio_button_checked</button>
+					<button className="material-icons">font_download</button>
+				</div>
+				<div className="col-md-5">
+					<button className="material-icons">people</button>
+					<button className="material-icons">file_upload</button>
+					<input className="material-icons searchbox" placeholder="search" />
 				</div>
 			</div>
 		);
