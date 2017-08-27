@@ -10,23 +10,23 @@ class Header extends Component {
 			<div className="header row">
 				<h2 className="col-sm-12 heading text-center">Notebook</h2>
 				<div className="col-md-4">
-					<button className="material-icons">list</button>
-					<button className="material-icons">dashboard</button>
-					<button className="material-icons" onClick={this.props.removeNote}>
+					<i className="material-icons">list</i>
+					<i className="material-icons">dashboard</i>
+					<i className="material-icons" onClick={this.props.removeNote}>
 						&#xE872;
-					</button>
-					<button className="material-icons" onClick={this.props.newNote}>
+					</i>
+					<i className="material-icons" onClick={this.props.newNote}>
 						add
-					</button>
+					</i>
 				</div>
 				<div className="col-md-3">
-					<button className="material-icons">lock</button>
-					<button className="material-icons">radio_button_checked</button>
-					<button className="material-icons">font_download</button>
+					<i className="material-icons">lock</i>
+					<i className="material-icons">check_circle</i>
+					<i className="material-icons">font_download</i>
 				</div>
 				<div className="col-md-5">
-					<button className="material-icons">people</button>
-					<button className="material-icons">file_upload</button>
+					<i className="material-icons">people</i>
+					<i className="material-icons">file_upload</i>
 					<input className="material-icons searchbox" placeholder="search" />
 				</div>
 			</div>

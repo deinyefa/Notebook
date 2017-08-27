@@ -1,4 +1,4 @@
-$color-primary: #d7d7d7;
+$color-primary: #f9f9f7;
 $color-secondary: #bfbfbf;
 
 $break-meduim: 768px;
@@ -16,7 +16,7 @@ body {
 /* ---------------------- HEADER --------------------- */
 .header {
 	margin: auto;
-	background-color: #909090;
+	background-color: #d9d7d9;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	.heading {
@@ -33,10 +33,11 @@ body {
 .material-icons {
 	outline: none !important;
 	border-radius: 10%;
-	margin: 3px;
+	border-color: $color-secondary;
+	margin: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
-	background-color: white;
+	background-color: #fefefe;
 
 	@media screen and (max-width: $break-meduim) {
 		display: none !important;

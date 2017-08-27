@@ -8,7 +8,7 @@ class NoteList extends Component {
 		return this.props.notes.map(note => {
 			return (
 				<li
-					className="note-item pl-3"
+					className="note-item pl-3 font-weight-bold"
 					key={note.id}
 					onClick={() => this.props.selectNote(note)}
 				>
