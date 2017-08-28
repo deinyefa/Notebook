@@ -1,19 +1,27 @@
+import {
+	NOTE_SELECTED,
+	CONTENT_UPDATE,
+	NEW_NOTE,
+	REMOVE_NOTE
+} from '../lib/notes_constants';
+
 // state here is not app state, only the state this reducer is responsible for...
 let nextID = 4;
 export default function(
 	state = {
 		selected: {},
 		notelist: [
-			{ title: 'Grocery List', id: 1 },
-			{ title: 'Main Points', id: 2 },
-			{ title: 'Agenda', id: 3 },
-			{ title: 'Untitled', id: 4 }
+			{ title: 'Grocery List', id: 1, folderid: 1 },
+			{ title: 'Main Points', id: 2, folderid: 1 },
+			{ title: 'Agenda', id: 3, folderid: 2 },
+			{ title: 'Untitled', id: 4, folderid: 2 }
 		]
 	},
 	action
 ) {
 	switch (action.type) {
-		case 'NOTE_SELECTED':
+		// ------------------------------------ NOTES CASES ------------------------------------- //
+		case NOTE_SELECTED:
 			return { ...state, selected: action.payload };
 		case 'CONTENT_UPDATE':
 			return {
@@ -24,14 +32,14 @@ export default function(
 				}),
 				selected: { ...state.selected, title: action.payload }
 			};
-		case 'NEW_NOTE':
+		case NEW_NOTE:
 			nextID += 1;
 			return {
 				...state,
 				notelist: [...state.notelist, { title: '', id: nextID }]
 			};
 
-		case 'REMOVE_NOTE':
+		case REMOVE_NOTE:
 			let index = state.notelist.findIndex(
 				element => element.id == state.selected.id
 			);
@@ -56,6 +64,17 @@ export default function(
 				notelist: [...state.notelist],
 				selected: newSelected
 			};
+
+		// ------------------------------------ FOLDERS CASES ------------------------------------- //
+		// case FOLDER_SELECTED:
+		// 	return {
+		// 		...state,
+		// 		notelist: state.notelist.map((note) => {
+		// 			if (note.folderid == state.folders.selected.id) {
+		//
+		// 			}
+		// 		})
+		// 	}
 	}
 	return state;
 }

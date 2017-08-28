@@ -3,6 +3,7 @@ import { Component } from 'react';
 
 // Components
 import Header from '../containers/header';
+import FolderList from '../containers/folder-list';
 import NoteList from '../containers/note-list';
 import NoteArea from '../containers/note-area';
 
@@ -12,6 +13,7 @@ export default class App extends Component {
 			<div>
 				<Header />
 				<div className="row">
+					<FolderList />
 					<NoteList />
 					<NoteArea />
 				</div>

@@ -5,17 +5,19 @@ import { bindActionCreators } from 'redux';
 
 class NoteList extends Component {
 	renderList() {
-		return this.props.notes.map(note => {
-			return (
-				<li
-					className="note-item pl-3 font-weight-bold"
-					key={note.id}
-					onClick={() => this.props.selectNote(note)}
-				>
-					{note.title}
-				</li>
-			);
-		});
+		return this.props.notes
+			.filter(note => note.folderid == this.props.selectedfolder.id)
+			.map(note => {
+				return (
+					<li
+						className="note-item pl-3 font-weight-bold"
+						key={note.id}
+						onClick={() => this.props.selectNote(note)}
+					>
+						{note.title}
+					</li>
+				);
+			});
 	}
 
 	render() {
@@ -32,7 +34,8 @@ class NoteList extends Component {
 function mapStateToProps(state) {
 	// what is returned will show up as props inside BookList
 	return {
-		notes: state.notes.notelist
+		notes: state.notes.notelist,
+		selectedfolder: state.folders.selected
 	};
 }
 

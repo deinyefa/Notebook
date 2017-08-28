@@ -1,0 +1,1 @@
+export const FOLDER_SELECTED = 'FOLDER_SELECTED';
