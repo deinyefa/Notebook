@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 class NoteArea extends Component {
 	render() {
 		return (
-			<div className="note-area col-sm-5">
+			<div className="note-area col-sm-6">
 				<textarea
 					placeholder="Start writing..."
 					rows="10"

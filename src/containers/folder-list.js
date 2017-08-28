@@ -8,7 +8,7 @@ class FolderList extends Component {
 		return this.props.folders.map(folder => {
 			return (
 				<li
-					className="note-item pl-3 font-weight-bold"
+					className="note-item font-weight-bold"
 					key={folder.id}
 					onClick={() => this.props.selectFolder(folder)}
 				>
@@ -20,7 +20,7 @@ class FolderList extends Component {
 
 	render() {
 		return (
-			<div className="col-sm-3">
+			<div className="folder col-sm-2">
 				<ul>
 					{this.renderList()}
 				</ul>

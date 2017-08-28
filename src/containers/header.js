@@ -22,7 +22,7 @@ class Header extends Component {
 				<div className="col-md-3">
 					<i className="material-icons">lock</i>
 					<i className="material-icons">check_circle</i>
-					<i className="material-icons">font_download</i>
+					<i className="material-icons text-icon">font_download</i>
 				</div>
 				<div className="col-md-5">
 					<i className="material-icons">people</i>

@@ -31,6 +31,7 @@ body {
 	width: 65%;
 }
 .material-icons {
+	color: #808080;
 	outline: none !important;
 	border-radius: 10%;
 	border-color: $color-secondary;
@@ -42,6 +43,13 @@ body {
 	@media screen and (max-width: $break-meduim) {
 		display: none !important;
 	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+.text-icon {
+	color: #c8c8c8;
 }
 
 /* --------------------- NOTEAREA -------------------- */
@@ -69,5 +77,14 @@ body {
 	&:hover {
 		cursor: pointer;
 		background-color: #f0ad4e;
+	}
+}
+
+/* --------------------- FOLDERS -------------------- */
+.folder {
+	border-right: 1px $color-secondary solid;
+	padding: 0;
+	ul {
+		padding-left: 0;
 	}
 }

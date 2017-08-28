@@ -22,6 +22,7 @@ body {
   width: 65%; }
 
 .material-icons {
+  color: #808080;
   outline: none !important;
   border-radius: 10%;
   border-color: #bfbfbf;
@@ -32,6 +33,11 @@ body {
   @media screen and (max-width: 768px) {
     .material-icons {
       display: none !important; } }
+  .material-icons:hover {
+    cursor: pointer; }
+
+.text-icon {
+  color: #c8c8c8; }
 
 /* --------------------- NOTEAREA -------------------- */
 .note-area {
@@ -54,5 +60,12 @@ body {
   .note-item:hover {
     cursor: pointer;
     background-color: #f0ad4e; }
+
+/* --------------------- FOLDERS -------------------- */
+.folder {
+  border-right: 1px #bfbfbf solid;
+  padding: 0; }
+  .folder ul {
+    padding-left: 0; }
 
 /*# sourceMappingURL=style.css.map */
