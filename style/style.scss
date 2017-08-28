@@ -83,7 +83,7 @@ body {
 /* --------------------- FOLDERS -------------------- */
 .folder {
 	border-right: 1px $color-secondary solid;
-	padding: 0;
+	padding: 0 !important;
 	ul {
 		padding-left: 0;
 	}

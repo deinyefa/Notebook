@@ -4,6 +4,7 @@ import {
 	NEW_NOTE,
 	REMOVE_NOTE
 } from '../lib/notes_constants';
+import { FOLDER_SELECTED } from '../lib/folder_constants';
 
 // state here is not app state, only the state this reducer is responsible for...
 let nextID = 4;
@@ -23,7 +24,7 @@ export default function(
 		// ------------------------------------ NOTES CASES ------------------------------------- //
 		case NOTE_SELECTED:
 			return { ...state, selected: action.payload };
-		case 'CONTENT_UPDATE':
+		case CONTENT_UPDATE:
 			return {
 				...state,
 				notelist: state.notelist.map(note => {
@@ -38,7 +39,6 @@ export default function(
 				...state,
 				notelist: [...state.notelist, { title: '', id: nextID }]
 			};
-
 		case REMOVE_NOTE:
 			let index = state.notelist.findIndex(
 				element => element.id == state.selected.id
@@ -66,15 +66,16 @@ export default function(
 			};
 
 		// ------------------------------------ FOLDERS CASES ------------------------------------- //
+		//- when a folder is selected, the first item in the
+		//- note list should be automatically selected...
 		// case FOLDER_SELECTED:
 		// 	return {
 		// 		...state,
-		// 		notelist: state.notelist.map((note) => {
-		// 			if (note.folderid == state.folders.selected.id) {
-		//
-		// 			}
-		// 		})
-		// 	}
+		// 		notelist: state.notelist.map(note => {
+		// 			if (note.folderid == state.folders.selected.id) return note;
+		// 		}),
+		// 		selected: { ...state.notelist[0] }
+		// 	};
 	}
 	return state;
 }

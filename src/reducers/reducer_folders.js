@@ -1,6 +1,7 @@
-import { FOLDER_SELECTED } from '../lib/folder_constants';
+import { FOLDER_SELECTED, NEW_FOLDER } from '../lib/folder_constants';
 
 let folderlist = [{ name: 'Folder 1', id: 1 }, { name: 'Folder 2', id: 2 }];
+let folder_id = 2;
 
 export default function(
 	state = {
@@ -12,6 +13,13 @@ export default function(
 	switch (action.type) {
 		case FOLDER_SELECTED:
 			return { ...state, selected: action.payload };
+
+		case NEW_FOLDER:
+			folder_id += 1;
+			return {
+				...state,
+				folderlist: [...state.folderlist, { title: '', id: folder_id }]
+			};
 	}
 	return state;
 }

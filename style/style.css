@@ -64,7 +64,7 @@ body {
 /* --------------------- FOLDERS -------------------- */
 .folder {
   border-right: 1px #bfbfbf solid;
-  padding: 0; }
+  padding: 0 !important; }
   .folder ul {
     padding-left: 0; }
 

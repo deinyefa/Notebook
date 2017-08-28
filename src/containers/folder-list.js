@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectFolder } from '../actions/index';
+import { selectFolder, newFolder } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class FolderList extends Component {
@@ -8,7 +8,7 @@ class FolderList extends Component {
 		return this.props.folders.map(folder => {
 			return (
 				<li
-					className="note-item font-weight-bold"
+					className="note-item pl-3 font-weight-bold"
 					key={folder.id}
 					onClick={() => this.props.selectFolder(folder)}
 				>
@@ -24,6 +24,11 @@ class FolderList extends Component {
 				<ul>
 					{this.renderList()}
 				</ul>
+				<div>
+					<i className="material-icons" onClick={this.props.newFolder}>
+						create_new_folder
+					</i>
+				</div>
 			</div>
 		);
 	}
@@ -36,7 +41,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispachToProps(dispatch) {
-	return bindActionCreators({ selectFolder }, dispatch);
+	return bindActionCreators({ selectFolder, newFolder }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispachToProps)(FolderList);
