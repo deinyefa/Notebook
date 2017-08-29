@@ -7,6 +7,7 @@ import {
 import {
 	FOLDER_SELECTED,
 	NEW_FOLDER,
+	REMOVE_FOLDER,
 	FOLDER_OPTIONS
 } from '../lib/folder_constants';
 
@@ -45,6 +46,11 @@ export function selectFolder(folder) {
 export function newFolder() {
 	return {
 		type: NEW_FOLDER
+	};
+}
+export function removeFolder() {
+	return {
+		type: REMOVE_FOLDER
 	};
 }
 export function folderOptions(folder) {

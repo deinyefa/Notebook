@@ -1,6 +1,7 @@
 import {
 	FOLDER_SELECTED,
 	NEW_FOLDER,
+	REMOVE_FOLDER,
 	FOLDER_OPTIONS
 } from '../lib/folder_constants';
 
@@ -29,6 +30,32 @@ export default function(
 			return {
 				...state,
 				rightClickedIndex: action.payload.id
+			};
+
+		case REMOVE_FOLDER:
+			let folderIndex = state.folderlist.findIndex(
+				element => element.id == state.rightClickedIndex
+			);
+			state.folderlist.splice(folderIndex, 1);
+
+			let nextSelected;
+			if (state.folderlist.length == 0) {
+				folder_id = 1;
+				return {
+					...state,
+					folderlist: [...state.folderlist, { title: '', id: folder_id }],
+					selected: { ...state.selected, title: '' }
+				};
+			} else if (folderIndex < state.folderlist.length) {
+				nextSelected = state.folderlist[folderIndex];
+			} else {
+				nextSelected = state.folderlist[folderIndex - 1];
+			}
+
+			return {
+				...state,
+				folderlist: [...state.folderlist],
+				selected: nextSelected
 			};
 	}
 	return state;

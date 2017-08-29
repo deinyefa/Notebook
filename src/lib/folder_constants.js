@@ -1,3 +1,4 @@
 export const FOLDER_SELECTED = 'FOLDER_SELECTED';
 export const NEW_FOLDER = 'NEW_FOLDER';
+export const REMOVE_FOLDER = 'REMOVE_FOLDER';
 export const FOLDER_OPTIONS = 'FOLDER_OPTIONS';

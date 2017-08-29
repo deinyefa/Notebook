@@ -64,18 +64,6 @@ export default function(
 				notelist: [...state.notelist],
 				selected: newSelected
 			};
-
-		// ------------------------------------ FOLDERS CASES ------------------------------------- //
-		//- when a folder is selected, the first item in the
-		//- note list should be automatically selected...
-		// case FOLDER_SELECTED:
-		// 	return {
-		// 		...state,
-		// 		notelist: state.notelist.map(note => {
-		// 			if (note.folderid == state.folders.selected.id) return note;
-		// 		}),
-		// 		selected: { ...state.notelist[0] }
-		// 	};
 	}
 	return state;
 }
