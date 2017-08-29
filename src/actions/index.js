@@ -4,7 +4,11 @@ import {
 	NEW_NOTE,
 	REMOVE_NOTE
 } from '../lib/notes_constants';
-import { FOLDER_SELECTED, NEW_FOLDER } from '../lib/folder_constants';
+import {
+	FOLDER_SELECTED,
+	NEW_FOLDER,
+	FOLDER_OPTIONS
+} from '../lib/folder_constants';
 
 // ------------------------------------ NOTES ACTIONS ------------------------------------- //
 export function selectNote(note) {
@@ -41,5 +45,11 @@ export function selectFolder(folder) {
 export function newFolder() {
 	return {
 		type: NEW_FOLDER
+	};
+}
+export function folderOptions(folder) {
+	return {
+		type: FOLDER_OPTIONS,
+		payload: folder
 	};
 }

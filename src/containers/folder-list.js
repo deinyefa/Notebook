@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectFolder, newFolder } from '../actions/index';
+import { selectFolder, newFolder, folderOptions } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class FolderList extends Component {
@@ -11,7 +11,20 @@ class FolderList extends Component {
 					className="note-item pl-3 font-weight-bold"
 					key={folder.id}
 					onClick={() => this.props.selectFolder(folder)}
+					onContextMenu={e => {
+						e.preventDefault();
+						return this.props.folderOptions(folder);
+					}}
 				>
+					{folder.id == this.props.rightClickedIndex
+						? <select>
+								<option value="renameFolder">Rename Folder</option>
+								<option value="removeFolder">Delete Folder</option>
+								<option value="newFolder" onClick={this.props.newFolder}>
+									New Folder
+								</option>
+							</select>
+						: ''}
 					{folder.name}
 				</li>
 			);
@@ -36,12 +49,16 @@ class FolderList extends Component {
 
 function mapStateToProps(state) {
 	return {
-		folders: state.folders.folderlist
+		folders: state.folders.folderlist,
+		rightClickedIndex: state.folders.rightClickedIndex
 	};
 }
 
 function mapDispachToProps(dispatch) {
-	return bindActionCreators({ selectFolder, newFolder }, dispatch);
+	return bindActionCreators(
+		{ selectFolder, newFolder, folderOptions },
+		dispatch
+	);
 }
 
 export default connect(mapStateToProps, mapDispachToProps)(FolderList);

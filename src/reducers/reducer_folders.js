@@ -1,4 +1,8 @@
-import { FOLDER_SELECTED, NEW_FOLDER } from '../lib/folder_constants';
+import {
+	FOLDER_SELECTED,
+	NEW_FOLDER,
+	FOLDER_OPTIONS
+} from '../lib/folder_constants';
 
 let folderlist = [{ name: 'Folder 1', id: 1 }, { name: 'Folder 2', id: 2 }];
 let folder_id = 2;
@@ -19,6 +23,12 @@ export default function(
 			return {
 				...state,
 				folderlist: [...state.folderlist, { title: '', id: folder_id }]
+			};
+
+		case FOLDER_OPTIONS:
+			return {
+				...state,
+				rightClickedIndex: action.payload.id
 			};
 	}
 	return state;
