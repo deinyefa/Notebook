@@ -10,7 +10,8 @@ import {
 	NEW_FOLDER,
 	REMOVE_FOLDER,
 	FOLDER_TO_RENAME,
-	RENAME_FOLDER
+	RENAME_FOLDER,
+	TOGGLE_FOLDER_LIST
 } from '../lib/folder_constants';
 
 // ------------------------------------ NOTES ACTIONS ------------------------------------- //
@@ -71,5 +72,10 @@ export function folderToRename(folder) {
 	return {
 		type: FOLDER_TO_RENAME,
 		payload: folder
+	};
+}
+export function toggleFolderList() {
+	return {
+		type: TOGGLE_FOLDER_LIST
 	};
 }

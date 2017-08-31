@@ -4,7 +4,8 @@ import {
 	NEW_FOLDER,
 	REMOVE_FOLDER,
 	FOLDER_TO_RENAME,
-	RENAME_FOLDER
+	RENAME_FOLDER,
+	TOGGLE_FOLDER_LIST
 } from '../lib/folder_constants';
 
 let folderlist = [{ name: 'Folder 1', id: 0 }, { name: 'Folder 2', id: 1 }];
@@ -13,7 +14,8 @@ let folder_id = 1;
 export default function(
 	state = {
 		selected: { ...folderlist[0] },
-		folderlist
+		folderlist,
+		listShowing: false
 	},
 	action
 ) {
@@ -71,6 +73,17 @@ export default function(
 			return {
 				...state,
 				folderlist: [...folderlist]
+			};
+
+		case TOGGLE_FOLDER_LIST:
+			if (state.listShowing) {
+				state.listShowing = false;
+			} else {
+				state.listShowing = true;
+			}
+			return {
+				...state,
+				listShowing: state.listShowing
 			};
 	}
 	return state;

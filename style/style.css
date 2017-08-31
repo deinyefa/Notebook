@@ -5,12 +5,6 @@ body {
   height: 100%;
   background-color: #f9f9f7 !important; }
 
-.wrapper {
-  position: relative;
-  overflow: hidden;
-  width: auto;
-  height: auto; }
-
 /* ---------------------- HEADER --------------------- */
 .header {
   margin: auto;
@@ -61,7 +55,8 @@ body {
   border-bottom: 1px #bfbfbf solid;
   padding-bottom: 5%;
   padding-top: 5%;
-  list-style: none; }
+  list-style: none;
+  overflow-x: hidden; }
   .note-item:hover {
     cursor: pointer;
     background-color: #f0ad4e; }
@@ -70,12 +65,16 @@ body {
 .folder {
   border-right: 1px #bfbfbf solid;
   padding: 0 !important;
-  position: absolute !important;
-  left: -100%;
-  height: auto;
-  transition: 1s; }
+  background: #eeeeee; }
   .folder ul {
     padding-left: 0; }
+    .folder ul li {
+      list-style: none;
+      padding-bottom: 5%;
+      padding-top: 5%; }
+
+.hidden {
+  display: none; }
 
 .new_folder i {
   background-color: #7e7e7e;
@@ -83,9 +82,5 @@ body {
   font-size: 18px; }
 .new_folder p {
   display: inline-block; }
-
-.view_list:hover .folder {
-  transition: 1s;
-  left: 0; }
 
 /*# sourceMappingURL=style.css.map */

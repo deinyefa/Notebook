@@ -13,12 +13,12 @@ body {
 	background-color: $color-primary !important;
 }
 
-.wrapper {
-	position: relative;
-	overflow: hidden;
-	width: auto;
-	height: auto;
-}
+// .wrapper {
+// 	position: relative;
+// 	overflow: hidden;
+// 	width: auto;
+// 	height: auto;
+// }
 
 /* ---------------------- HEADER --------------------- */
 .header {
@@ -79,6 +79,7 @@ body {
 	padding-bottom: 5%;
 	padding-top: 5%;
 	list-style: none;
+	overflow-x: hidden;
 
 	&:hover {
 		cursor: pointer;
@@ -90,15 +91,20 @@ body {
 .folder {
 	border-right: 1px $color-secondary solid;
 	padding: 0 !important;
-
-	position: absolute !important;
-	left: -100%;
-	height: auto;
-	transition: 1s;
+	background: #eeeeee;
 
 	ul {
 		padding-left: 0;
+
+		li {
+			list-style: none;
+			padding-bottom: 5%;
+			padding-top: 5%;
+		}
 	}
+}
+.hidden {
+	display: none;
 }
 .new_folder {
 	i {
@@ -109,8 +115,4 @@ body {
 	p {
 		display: inline-block;
 	}
-}
-.view_list:hover .folder {
-	transition: 1s;
-	left: 0;
 }

@@ -4,3 +4,4 @@ export const NEW_FOLDER = 'NEW_FOLDER';
 export const REMOVE_FOLDER = 'REMOVE_FOLDER';
 export const FOLDER_TO_RENAME = 'FOLDER_TO_RENAME';
 export const RENAME_FOLDER = 'RENAME_FOLDER';
+export const TOGGLE_FOLDER_LIST = 'TOGGLE_FOLDER_LIST';

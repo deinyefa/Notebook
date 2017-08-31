@@ -35,7 +35,7 @@ class FolderList extends Component {
 		return this.props.folders.map(folder => {
 			return (
 				<li
-					className="note-item pl-3 font-weight-bold"
+					className="pl-3 font-weight-bold"
 					key={folder.id}
 					onClick={() => this.props.selectFolder(folder)}
 					onContextMenu={e => {
@@ -78,7 +78,11 @@ class FolderList extends Component {
 
 	render() {
 		return (
-			<div className="folder col-sm-2">
+			<div
+				className={
+					'folder col-sm-2 ' + (this.props.listShowing ? 'hidden' : 'show')
+				}
+			>
 				<ul>
 					{this.renderList()}
 				</ul>
@@ -97,7 +101,8 @@ function mapStateToProps(state) {
 	return {
 		folders: state.folders.folderlist,
 		rightClickedIndex: state.folders.rightClickedIndex,
-		indexToRename: state.folders.indexToRename
+		indexToRename: state.folders.indexToRename,
+		listShowing: state.folders.listShowing
 	};
 }
 

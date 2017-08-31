@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { newNote } from '../actions/index';
-import { removeNote } from '../actions/index';
+import { newNote, removeNote, toggleFolderList } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class Header extends Component {
@@ -10,9 +9,12 @@ class Header extends Component {
 			<div className="header row">
 				<h2 className="col-sm-12 heading text-center">Notebook</h2>
 				<div className="col-md-4">
-					<a className="view_list">
-						<i className="material-icons">view_list</i>
-					</a>
+					<i
+						className="material-icons view_list"
+						onClick={this.props.toggleFolderList}
+					>
+						view_list
+					</i>
 					<i className="material-icons">view_module</i>
 					<i className="material-icons" onClick={this.props.removeNote}>
 						&#xE872;
@@ -44,7 +46,7 @@ function mapStateToProps(state) {
 
 function mapDispachToProps(dispatch) {
 	return bindActionCreators(
-		{ newNote: newNote, removeNote: removeNote },
+		{ newNote, removeNote, toggleFolderList },
 		dispatch
 	);
 }
