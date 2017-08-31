@@ -6,9 +6,11 @@ import {
 } from '../lib/notes_constants';
 import {
 	FOLDER_SELECTED,
+	FOLDER_OPTIONS,
 	NEW_FOLDER,
 	REMOVE_FOLDER,
-	FOLDER_OPTIONS
+	FOLDER_TO_RENAME,
+	RENAME_FOLDER
 } from '../lib/folder_constants';
 
 // ------------------------------------ NOTES ACTIONS ------------------------------------- //
@@ -43,6 +45,12 @@ export function selectFolder(folder) {
 		payload: folder
 	};
 }
+export function folderOptions(folder) {
+	return {
+		type: FOLDER_OPTIONS,
+		payload: folder
+	};
+}
 export function newFolder() {
 	return {
 		type: NEW_FOLDER
@@ -53,9 +61,15 @@ export function removeFolder() {
 		type: REMOVE_FOLDER
 	};
 }
-export function folderOptions(folder) {
+export function renameFolder(folder) {
 	return {
-		type: FOLDER_OPTIONS,
+		type: RENAME_FOLDER,
+		payload: folder
+	};
+}
+export function folderToRename(folder) {
+	return {
+		type: FOLDER_TO_RENAME,
 		payload: folder
 	};
 }

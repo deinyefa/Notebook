@@ -12,7 +12,7 @@ export default class App extends Component {
 		return (
 			<div>
 				<Header />
-				<div className="row">
+				<div className="row wrapper">
 					<FolderList />
 					<NoteList />
 					<NoteArea />

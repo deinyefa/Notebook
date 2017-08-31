@@ -5,6 +5,12 @@ body {
   height: 100%;
   background-color: #f9f9f7 !important; }
 
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: auto; }
+
 /* ---------------------- HEADER --------------------- */
 .header {
   margin: auto;
@@ -18,7 +24,6 @@ body {
         display: none; } }
 
 .searchbox {
-  border-radius: 5%;
   width: 65%; }
 
 .material-icons {
@@ -64,8 +69,23 @@ body {
 /* --------------------- FOLDERS -------------------- */
 .folder {
   border-right: 1px #bfbfbf solid;
-  padding: 0 !important; }
+  padding: 0 !important;
+  position: absolute !important;
+  left: -100%;
+  height: auto;
+  transition: 1s; }
   .folder ul {
     padding-left: 0; }
+
+.new_folder i {
+  background-color: #7e7e7e;
+  color: #bfbfbf;
+  font-size: 18px; }
+.new_folder p {
+  display: inline-block; }
+
+.view_list:hover .folder {
+  transition: 1s;
+  left: 0; }
 
 /*# sourceMappingURL=style.css.map */

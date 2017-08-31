@@ -1,12 +1,14 @@
 import {
 	FOLDER_SELECTED,
+	FOLDER_OPTIONS,
 	NEW_FOLDER,
 	REMOVE_FOLDER,
-	FOLDER_OPTIONS
+	FOLDER_TO_RENAME,
+	RENAME_FOLDER
 } from '../lib/folder_constants';
 
-let folderlist = [{ name: 'Folder 1', id: 1 }, { name: 'Folder 2', id: 2 }];
-let folder_id = 2;
+let folderlist = [{ name: 'Folder 1', id: 0 }, { name: 'Folder 2', id: 1 }];
+let folder_id = 1;
 
 export default function(
 	state = {
@@ -23,7 +25,7 @@ export default function(
 			folder_id += 1;
 			return {
 				...state,
-				folderlist: [...state.folderlist, { title: '', id: folder_id }]
+				folderlist: [...state.folderlist, { name: '', id: folder_id }]
 			};
 
 		case FOLDER_OPTIONS:
@@ -56,6 +58,19 @@ export default function(
 				...state,
 				folderlist: [...state.folderlist],
 				selected: nextSelected
+			};
+
+		case FOLDER_TO_RENAME:
+			return {
+				...state,
+				indexToRename: action.payload.id
+			};
+
+		case RENAME_FOLDER:
+			state.folderlist[state.indexToRename].name = action.payload;
+			return {
+				...state,
+				folderlist: [...folderlist]
 			};
 	}
 	return state;

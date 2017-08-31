@@ -2,21 +2,33 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
 	selectFolder,
-	newFolder,
 	folderOptions,
-	removeFolder
+	newFolder,
+	removeFolder,
+	folderToRename,
+	renameFolder
 } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class FolderList extends Component {
-	handleChange(e) {
+	handleChange(folder, e) {
 		if (e.target.value == 'renameFolder') {
-			console.log(e.target.value + ' was selected');
+			this.props.folderToRename(folder);
 		} else if (e.target.value == 'removeFolder') {
-			return this.props.removeFolder();
+			this.props.removeFolder();
 		} else if (e.target.value == 'newFolder') {
-			return this.props.newFolder();
+			this.props.newFolder();
 		}
+	}
+
+	handleSubmit(e) {
+		e.preventDefault();
+		console.log('form submitted');
+	}
+
+	valueChange(e) {
+		e.preventDefault();
+		this.props.renameFolder(e.target.value);
 	}
 
 	renderList() {
@@ -28,15 +40,35 @@ class FolderList extends Component {
 					onClick={() => this.props.selectFolder(folder)}
 					onContextMenu={e => {
 						e.preventDefault();
-						return this.props.folderOptions(folder);
+						this.props.folderOptions(folder);
 					}}
 				>
 					{folder.id == this.props.rightClickedIndex
-						? <select onChange={this.handleChange.bind(this)}>
+						? <select onChange={this.handleChange.bind(this, folder)}>
+								<option />
 								<option value="renameFolder">Rename Folder</option>
 								<option value="removeFolder">Delete Folder</option>
 								<option value="newFolder">New Folder</option>
 							</select>
+						: ''}
+					{folder.id == this.props.indexToRename
+						? <form onSubmit={this.handleSubmit}>
+								<input
+									type="text"
+									value={folder.name}
+									onChange={this.valueChange.bind(this)}
+								/>
+								<input
+									type="submit"
+									style={{
+										position: 'absolute',
+										left: '-9999px',
+										width: '1px',
+										height: '1px'
+									}}
+									tabIndex="-1"
+								/>
+							</form>
 						: ''}
 					{folder.name}
 				</li>
@@ -50,10 +82,11 @@ class FolderList extends Component {
 				<ul>
 					{this.renderList()}
 				</ul>
-				<div>
+				<div className="new_folder fixed-bottom">
 					<i className="material-icons" onClick={this.props.newFolder}>
-						create_new_folder
+						add
 					</i>
+					<p>New Folder</p>
 				</div>
 			</div>
 		);
@@ -63,13 +96,21 @@ class FolderList extends Component {
 function mapStateToProps(state) {
 	return {
 		folders: state.folders.folderlist,
-		rightClickedIndex: state.folders.rightClickedIndex
+		rightClickedIndex: state.folders.rightClickedIndex,
+		indexToRename: state.folders.indexToRename
 	};
 }
 
 function mapDispachToProps(dispatch) {
 	return bindActionCreators(
-		{ selectFolder, newFolder, folderOptions, removeFolder },
+		{
+			selectFolder,
+			newFolder,
+			folderOptions,
+			removeFolder,
+			folderToRename,
+			renameFolder
+		},
 		dispatch
 	);
 }

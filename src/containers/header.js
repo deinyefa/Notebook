@@ -10,13 +10,15 @@ class Header extends Component {
 			<div className="header row">
 				<h2 className="col-sm-12 heading text-center">Notebook</h2>
 				<div className="col-md-4">
-					<i className="material-icons">list</i>
-					<i className="material-icons">dashboard</i>
+					<a className="view_list">
+						<i className="material-icons">view_list</i>
+					</a>
+					<i className="material-icons">view_module</i>
 					<i className="material-icons" onClick={this.props.removeNote}>
 						&#xE872;
 					</i>
 					<i className="material-icons" onClick={this.props.newNote}>
-						add
+						note_add
 					</i>
 				</div>
 				<div className="col-md-3">

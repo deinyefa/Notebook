@@ -13,6 +13,13 @@ body {
 	background-color: $color-primary !important;
 }
 
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	width: auto;
+	height: auto;
+}
+
 /* ---------------------- HEADER --------------------- */
 .header {
 	margin: auto;
@@ -27,7 +34,7 @@ body {
 	}
 }
 .searchbox {
-	border-radius: 5%;
+	// border-radius: 5%;
 	width: 65%;
 }
 .material-icons {
@@ -43,7 +50,6 @@ body {
 	@media screen and (max-width: $break-meduim) {
 		display: none !important;
 	}
-
 	&:hover {
 		cursor: pointer;
 	}
@@ -84,7 +90,27 @@ body {
 .folder {
 	border-right: 1px $color-secondary solid;
 	padding: 0 !important;
+
+	position: absolute !important;
+	left: -100%;
+	height: auto;
+	transition: 1s;
+
 	ul {
 		padding-left: 0;
 	}
+}
+.new_folder {
+	i {
+		background-color: #7e7e7e;
+		color: $color-secondary;
+		font-size: 18px;
+	}
+	p {
+		display: inline-block;
+	}
+}
+.view_list:hover .folder {
+	transition: 1s;
+	left: 0;
 }
