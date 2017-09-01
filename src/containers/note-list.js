@@ -42,7 +42,7 @@ function mapStateToProps(state) {
 // what is returned will also show up as props on BookList
 function mapDispachToProps(dispatch) {
 	// when selectNote is called, the result should be passed to all the reducers
-	return bindActionCreators({ selectNote: selectNote }, dispatch);
+	return bindActionCreators({ selectNote }, dispatch);
 }
 
 // transform BookList from component to container - it needs to know about the new dispach method, selectNote so we make it available as a prop

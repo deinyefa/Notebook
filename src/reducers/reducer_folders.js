@@ -7,6 +7,7 @@ import {
 	RENAME_FOLDER,
 	TOGGLE_FOLDER_LIST
 } from '../lib/folder_constants';
+import { NEW_NOTE } from '../lib/notes_constants';
 
 let folderlist = [{ name: 'Folder 1', id: 0 }, { name: 'Folder 2', id: 1 }];
 let folder_id = 1;

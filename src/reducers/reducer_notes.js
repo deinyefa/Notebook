@@ -4,7 +4,6 @@ import {
 	NEW_NOTE,
 	REMOVE_NOTE
 } from '../lib/notes_constants';
-import { FOLDER_SELECTED } from '../lib/folder_constants';
 
 // state here is not app state, only the state this reducer is responsible for...
 let nextID = 4;
@@ -12,10 +11,10 @@ export default function(
 	state = {
 		selected: {},
 		notelist: [
-			{ title: 'Grocery List', id: 1, folderid: 1 },
+			{ title: 'Grocery List', id: 1, folderid: 0 },
 			{ title: 'Main Points', id: 2, folderid: 1 },
-			{ title: 'Agenda', id: 3, folderid: 2 },
-			{ title: 'Untitled', id: 4, folderid: 2 }
+			{ title: 'Agenda', id: 3, folderid: 0 },
+			{ title: 'Untitled', id: 4, folderid: 1 }
 		]
 	},
 	action
