@@ -5,8 +5,8 @@ import ReduxStorePersist from './reducer_persist';
 
 const rootReducer = combineReducers({
 	notes: NotesReducer,
-	folders: FoldersReducer
-	// persist: ReduxStorePersist
+	folders: FoldersReducer,
+	persist: ReduxStorePersist
 });
 
 export default rootReducer;

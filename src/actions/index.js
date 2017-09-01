@@ -28,9 +28,10 @@ export function updateContent(content) {
 		payload: content
 	};
 }
-export function newNote() {
+export function newNote(folder) {
 	return {
-		type: NEW_NOTE
+		type: NEW_NOTE,
+		payload: folder
 	};
 }
 export function removeNote() {

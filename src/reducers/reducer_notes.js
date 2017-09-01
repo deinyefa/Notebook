@@ -20,7 +20,6 @@ export default function(
 	action
 ) {
 	switch (action.type) {
-		// ------------------------------------ NOTES CASES ------------------------------------- //
 		case NOTE_SELECTED:
 			return { ...state, selected: action.payload };
 		case CONTENT_UPDATE:
@@ -36,7 +35,10 @@ export default function(
 			nextID += 1;
 			return {
 				...state,
-				notelist: [...state.notelist, { title: '', id: nextID }]
+				notelist: [
+					...state.notelist,
+					{ title: '', id: nextID, folderid: action.payload.id }
+				]
 			};
 		case REMOVE_NOTE:
 			let index = state.notelist.findIndex(

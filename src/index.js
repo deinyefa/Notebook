@@ -7,17 +7,15 @@ import { autoRehydrate, persistStore } from 'redux-persist';
 import App from './components/app';
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-// let store = compose(applyMiddleware(), autoRehydrate())(createStore)(reducers);
-// persistStore(store);
-
-// also, replace Provider store={createStoreWithMiddleware(reducers)} with Provider store={store}
+// const createStoreWithMiddleware = applyMiddleware()(createStore);
+let store = compose(applyMiddleware(), autoRehydrate())(createStore)(reducers);
+persistStore(store);
 
 ReactDOM.render(
-	<Provider store={createStoreWithMiddleware(reducers)}>
+	<Provider store={store}>
 		<App />
 	</Provider>,
 	document.querySelector('.container-fluid')
 );
 
-// export default store;
+export default store;

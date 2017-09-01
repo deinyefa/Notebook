@@ -19,7 +19,12 @@ class Header extends Component {
 					<i className="material-icons" onClick={this.props.removeNote}>
 						&#xE872;
 					</i>
-					<i className="material-icons" onClick={this.props.newNote}>
+					<i
+						className="material-icons"
+						onClick={() => {
+							this.props.newNote(this.props.selectedFolder);
+						}}
+					>
 						note_add
 					</i>
 				</div>
@@ -40,7 +45,8 @@ class Header extends Component {
 
 function mapStateToProps(state) {
 	return {
-		selected: state.notes.selected
+		selected: state.notes.selected,
+		selectedFolder: state.folders.selected
 	};
 }
 
